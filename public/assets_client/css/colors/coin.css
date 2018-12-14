@@ -1,0 +1,201 @@
+/*
+Template Name: Admin Press Admin
+Author: Themedesigner
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*
+Template Name: Admin Press Admin
+Author: Themedesigner
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+/*Theme Colors*/
+/*bootstrap Color*/
+/*Light colors*/
+/*Normal Color*/
+/*Extra Variable*/
+/*Preloader*/
+.preloader {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  position: fixed;
+  z-index: 99999;
+  background: #fff; }
+  .preloader .cssload-speeding-wheel {
+    position: absolute;
+    top: calc(50% - 3.5px);
+    left: calc(50% - 3.5px); }
+
+/*******************
+/*Top bar
+*******************/
+.topbar {
+  background: #fff; }
+  .topbar .navbar-header {
+    background: #fff; }
+  .topbar .top-navbar .navbar-header .navbar-brand .dark-logo {
+    display: none; }
+  .topbar .top-navbar .navbar-header .navbar-brand .light-logo {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.8); }
+  .topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
+    color: #ffffff !important; }
+    .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:hover, .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
+      color: rgba(255, 255, 255, 0.8) !important; }
+
+/*******************
+/*General Elements
+*******************/
+a.link:hover, a.link:focus {
+  color: #1976d2 !important; }
+
+.bg-theme {
+  background-color: #1976d2 !important; }
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #1976d2;
+  border-color: #1976d2; }
+
+.right-sidebar .rpanel-title {
+  background: #1976d2; }
+
+.left-sidebar{ background: grey; }
+
+.stylish-table tbody tr:hover, .stylish-table tbody tr.active {
+  border-left: 4px solid #1976d2; }
+
+.text-themecolor {
+  color: #1976d2 !important; }
+
+.profile-tab li a.nav-link.active,
+.customtab li a.nav-link.active {
+  border-bottom: 2px solid #1976d2;
+  color: #1976d2; }
+
+.profile-tab li a.nav-link:hover,
+.customtab li a.nav-link:hover {
+  color: #1976d2; }
+
+/*******************
+/*Buttons
+*******************/
+.btn-themecolor,
+.btn-themecolor.disabled {
+  background: #1976d2;
+  color: #ffffff;
+  border: 1px solid #1976d2; }
+  .btn-themecolor:hover,
+  .btn-themecolor.disabled:hover {
+    background: #1976d2;
+    opacity: 0.7;
+    border: 1px solid #1976d2; }
+  .btn-themecolor.active, .btn-themecolor:focus,
+  .btn-themecolor.disabled.active,
+  .btn-themecolor.disabled:focus {
+    background: #028ee1; }
+
+/*******************
+/*sidebar navigation
+*******************/
+.label-themecolor {
+  background: #1976d2; }
+
+.sidebar-nav > ul > li.active > a {
+  color: #fff;
+  border-color: #fff; 
+}
+
+.sidebar-nav > ul > li.active > a i {
+    color: #fff;
+}
+
+
+.sidebar-nav > ul > li > a i {
+    color: #fff; 
+}
+.sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {
+  color: #fff; 
+}
+.sidebar-nav ul li a.active i, .sidebar-nav ul li a:hover i {
+    color: #fff; 
+    max-height: 110px;
+}
+.sidebar-nav ul li a.active {
+  color: #fff; 
+  background-color: #efae2d; 
+}
+.sidebar-nav ul li a {
+  color: #fff; 
+}
+.sidebar-nav ul li a:hover {
+  color: #fff; 
+  background-color: #72716e;
+
+}
+
+.page-wrapper {
+  background: #f7f7f7;
+  padding-bottom: 60px;
+  padding-top: 65px
+}
+
+.page-titles {
+    background: #f7f7f7;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 30px 15px
+}
+
+.footer {
+    bottom: 0;
+    color: #67757c;
+    left: 0px;
+    text-align: center;
+    padding: 17px 15px;
+    position: absolute;
+    right: 0;
+    border-top: 1px solid rgba(120, 130, 140, 0.13);
+    background-color: #757470 !important;
+}
+
+.head-table-c{
+  background-color:  #ce761d;
+
+}
+
+.img-responsive-coin {
+    width: auto;
+    height: auto;
+    display: inline-block
+}
+.color-bordered-table.primary-bordered-coin {
+    border: 1px solid #ce761d
+}
+.color-bordered-table.primary-bordered-coin thead th {
+    background-color: #ce761d;
+    color: #ffffff
+}
+
+/*datatables*/
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #ffffff!important;
+    border: 1px solid #ce761d;
+    background-color: #ce761d
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white;
+    border: 1px solid #ce761d;
+    background-color: #ce761d;
+}
+
+.invisible{ visibility: hidden; }

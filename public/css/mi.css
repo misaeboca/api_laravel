@@ -1,0 +1,13 @@
+table > thead{ background-color: #efae2d; color: #000; }
+
+table, hr{ border: solid 1px #efae2d; }
+
+.fondo-verde{ background: #26dad2; }
+
+body, select, header, thead, tbody, tr, td, p, span, i, b , ul, li, a, small, aside, section { 
+	text-transform: capitalize;
+}
+
+input, span{ font-color: black; }
+
+body{ font-size: 14px; }

@@ -1,0 +1,29 @@
+CREATE TABLE "public"."departamentos" ("id" SERIAL, "departamento" character varying UNIQUE, "descripcion" character varying, "status" smallint DEFAULT 1, PRIMARY KEY ("id")) WITHOUT OIDS
+
+
+CREATE TABLE "public"."areas" ("id" SERIAL, "area" character varying, "sala_id" integer, "created_at" timestamp without time zone, "updated_at" timestamp with time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+CREATE TABLE "public"."instalaciones" ("id" SERIAL, "nro_factura" character varying NOT NULL, "cliente_id" integer, "instalador_user_id" integer, "modelo" character varying, "serial_equipo" character varying, "serial_fuente" character varying, "rack_id" integer, "posicion" character varying, "created_at" timestamp with time zone, "updated_at" timestamp with time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+CREATE TABLE "public"."facturas_alquiler" ("id" SERIAL, "serial_factura" character varying UNIQUE, "vendedor_user_id" integer, "cliente_id" integer, "status_pago" character varying, "created_at" timestamp without time zone, "updated_at" timestamp without time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+CREATE TABLE "public"."facturas_alquiler_detalles" ("id" SERIAL, "factura_alquiler_id" integer, "producto_id" integer, "cantidad" integer, "precio" real, "total" real, "status_instalacion" character varying DEFAULT 0, "created_at" timestamp without time zone, "updated_at" timestamp without time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+CREATE TABLE "public"."productos" ("id" SERIAL, "codigo" character varying UNIQUE, "tipo_id" integer, "nombre" character varying, "costo" real, "pvp" real, "stock" real, "proveedor_id" integer , "status" smallint DEFAULT 1, "created_at" timestamp without time zone, "updated_at" timestamp without time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+CREATE TABLE "public"."productos_tipos" ("id" SERIAL, "tipo" character varying, "created_at" timestamp without time zone, "updated_at" timestamp without time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+
+
+#CREATE TABLE "public"."proveedores" ("id" SERIAL, "cod_orden" integer UNIQUE, "nombre_proveedor" character varying, "direccion_proveedor" character varying, "nombre_receptor" character varying, "direccion_receptor" character varying, "status" integer, "created_at" timestamp without time zone, "updated_at" timestamp without time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+CREATE TABLE "public"."proveedores" ("id" SERIAL, "cod_rif" integer UNIQUE, "nombre" character varying, "direccion" character varying, "email" character varying, "telefono" bigint, "status" integer, "created_at" timestamp without time zone, "updated_at" timestamp without time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+
+CCREATE TABLE "public"."ingresos" ("id" SERIAL, "proveedor_id" integer, "tipo_comprobacion" character varying, "serial_comprobacion" character varying UNIQUE, "numero_comprobacion" character varying, "impuesto" real, "status" character varying, "created_at" timestamp without time zone, "updated_at" timestamp without time zone, PRIMARY KEY ("id")) WITHOUT OIDS
+
+CREATE TABLE "public"."ingreso_detalles" ("id" SERIAL, "ingreso_id" integer, "articulo_id" integer, "cantidad" integer, "precio_compra" real, "precio_venta" real, PRIMARY KEY ("id")) WITHOUT OIDS
+
+ALTER TABLE "public"."productos_tipos" ADD COLUMN "status" smallint
+
+ALTER TABLE "public"."productos_tipos" ALTER COLUMN "status" SET DEFAULT 1,ALTER COLUMN "status" TYPE smallint
