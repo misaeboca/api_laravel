@@ -20,6 +20,7 @@ Route::get('/mostrar', function () {
 });
 
 //Ruta hacia el metodo que me busca por id
+Route::any('/post', 'HomeController@post');
 Route::any('/post/{id}', 'PostController@buscarId', function () {
 
 });
@@ -61,4 +62,8 @@ Route::any('editar_mostrar_pag', 'PaginaController@editarMostrarPag', function (
 Route::any('/editar_pagina', 'PaginaController@editarPagina', function () {
 });
 Route::any('/delete_pagina', 'PaginaController@deletePagina', function () {
+});
+
+/***Visualizar Post***/
+Route::any('/post_mostrar', 'PostController@postMostrar', function () {
 });
