@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
 use Auth, Validator, Redirect, Session;
+use App\Models\Post;
 
 class LoginController extends Controller
 {
