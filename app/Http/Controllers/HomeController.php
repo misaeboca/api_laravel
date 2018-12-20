@@ -33,7 +33,11 @@ class HomeController extends Controller
         $post = Post::all();
         return View('index', ['post' => $post]);
     }
-
+    public function post()
+    {
+        $post = Post::all();
+        return View('post', ['post' => $post]);
+    }
     public function showChangePasswordForm(){
         return view('auth.passwords.cambiarclave');
     }
