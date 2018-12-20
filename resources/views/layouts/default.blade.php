@@ -114,6 +114,9 @@ $ruta = $porciones[0];
                                 <a class="has-arrow waves-effect waves-dark" href="{{url('/')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Inicio</span></a>
                             </li>
                             <li>
+                                <a class="has-arrow waves-effect waves-dark" href="{{url('/post')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Post</span></a>
+                            </li>
+                            <li>
                                 <a class="has-arrow waves-effect waves-dark" href="{{url('busqueda')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Individual</span></a>
                             </li>
                             <li>
