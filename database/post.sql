@@ -33,6 +33,14 @@ CREATE TABLE `categoria` (
   `nombre` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+INSERT INTO `categoria` (`id`, `nombre`) VALUES
+(1, 'Tecnologia'),
+(2, 'Artes');
+(3, 'Musica'),
+(4, 'Deporte');
+(5, 'Economia');
+
 -- --------------------------------------------------------
 
 --
