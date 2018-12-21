@@ -238,7 +238,7 @@ $("#btn_delete_pag").on("click", function(){
             success: function(data,i) {
                 if(data.res == 1){
                     $("#delete").modal("hide");
-                    window.location = url+"/";
+                    window.location = url+"/paginas";
                 }
             }
      });

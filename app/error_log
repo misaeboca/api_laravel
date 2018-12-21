@@ -1,0 +1,1 @@
+[05-Dec-2018 14:38:13 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Auth\User' not found in /home/elpoudelagallina/public_html/api/app/User.php on line 11

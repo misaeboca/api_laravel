@@ -1,0 +1,5 @@
+[05-Dec-2018 13:04:48 UTC] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'elpoudel_root'@'localhost' to database 'elpoudel_post' in /home/elpoudelagallina/public_html/api/test.php on line 2
+[05-Dec-2018 13:05:04 UTC] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'elpoudel_root'@'localhost' to database 'elpoudel_post' in /home/elpoudelagallina/public_html/api/test.php on line 2
+[05-Dec-2018 13:05:15 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/elpoudelagallina/public_html/api/test.php on line 2
+[05-Dec-2018 13:05:45 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/elpoudelagallina/public_html/api/test.php on line 2
+[05-Dec-2018 13:06:45 UTC] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'elpoudel_root'@'localhost' to database 'elpoudel_post' in /home/elpoudelagallina/public_html/api/test.php on line 2

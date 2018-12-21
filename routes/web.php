@@ -67,3 +67,8 @@ Route::any('/delete_pagina', 'PaginaController@deletePagina', function () {
 /***Visualizar Post***/
 Route::any('/post_mostrar', 'PostController@postMostrar', function () {
 });
+
+
+Route::get('/faker', function () {
+	factory(App\Moldels\Post::class, 3)->create();
+});

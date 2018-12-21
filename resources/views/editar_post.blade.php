@@ -110,7 +110,7 @@
                 //data:{},
                 success: function(data,i) {
                     if(data.res == 1){
-                        window.location = url+"/home";
+                        window.location = url+"/post";
                     }
                 }
          });

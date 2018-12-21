@@ -52,7 +52,7 @@
 @section('scripts')
 <script>
     $("#_cancelar_pag").on("click", function(){
-          window.location = url+"/home";
+          window.location = url+"/paginas";
     });
     $("#btn_edit_pag").on("click", function(){
         /*if($("#titulo").val()=='' ){

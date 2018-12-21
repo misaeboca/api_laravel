@@ -94,4 +94,11 @@ class PostController extends Controller
         DB::table('post')->where('id','=', $request->id)->delete();
         return json_encode(array('msj'=>'Registro Eliminado', 'res'=> 1));
     }
+    public function postMostrar(Request $request)
+    {
+        $datos = DB::table('post')->select('*')->where('id','=', $request->id)->get();
+
+        $cate  = DB::table('post_categoria')->where('id_posts','=', $request->id)->select('*')->orderBy('id_categoria', 'asc')->get();
+        return view('view_post', ['datos' => $datos[0], 'cate' => $cate]);
+    }
 }
