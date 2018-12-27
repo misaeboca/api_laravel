@@ -8,8 +8,15 @@ Route::get('/login', ['as'=>'login', function(){ return view('auth.login'); }]);
 Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@Logout']);
 Route::post('/logueando', 'Auth\LoginController@Login')->name('user.login');
 Route::any('/logout', ['uses' => 'Auth\LoginController@Logout'])->name('logout');
-Route::any('/', 'HomeController@index');
-Route::any('/home', 'HomeController@index')->name('home');
+
+Route::get('/', function () {
+	$datos = DB::table('post')->select('*')->get();
+    return view('index', ['datos' => $datos]);
+});
+Route::get('/home', function () {
+	$datos = DB::table('post')->select('*')->get();
+    return view('index', ['datos' => $datos]);
+});
 
 Route::get('/busqueda', function () {
 	return view('busqueda');
@@ -68,7 +75,30 @@ Route::any('/delete_pagina', 'PaginaController@deletePagina', function () {
 Route::any('/post_mostrar', 'PostController@postMostrar', function () {
 });
 
-
 Route::get('/faker', function () {
 	factory(App\Moldels\Post::class, 3)->create();
+});
+
+Route::any('/categorias', 'PostController@categorias', function () {
+});
+Route::get('/presentacion', function () {
+    return View('presentacion');
+});
+Route::any('/usuarios', 'UserController@usuarios', function () {
+});
+Route::any('/usuario_baja', 'UserController@editar', function () {
+});
+Route::any('/portada', 'PostController@postList', function () {
+});
+Route::any('/post_mostrar_list', 'PostController@postMostrarList', function () {
+});
+
+Route::get('/index_usuarios', function () {
+    $post = Post::all();
+	return view('index_usuarios', ['datos' => $post]);
+});
+
+Route::any('/usuarios_activar', 'UserController@activar', function () {
+});
+Route::any('/usuarios_inactivar', 'UserController@inactivar', function () {
 });
