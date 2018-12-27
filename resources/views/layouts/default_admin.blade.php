@@ -111,7 +111,7 @@ $ruta = $porciones[0];
                         <ul id="sidebarnav">
                             @if( $ruta != 'changePassword' )
                             <li>
-                                <a class="has-arrow waves-effect waves-dark" href="{{url('/index_usuarios')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Inicio</span></a>
+                                <a class="has-arrow waves-effect waves-dark" href="{{url('/')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Inicio</span></a>
                             </li>
                             <li>
                                 <a class="has-arrow waves-effect waves-dark" href="{{url('/post')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Post</span></a>
@@ -125,11 +125,9 @@ $ruta = $porciones[0];
                             <li>
                                 <a class="has-arrow waves-effect waves-dark" href="{{url('paginas')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Paginas</span></a>
                             </li>
-                                @if( Auth::user()->tipo == 1)
-                                    <li>
-                                        <a class="has-arrow waves-effect waves-dark" href="{{url('usuarios')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Usuarios</span></a>
-                                    </li>
-                                 @endif
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="{{url('usuarios')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Usuarios</span></a>
+                            </li>
                             @endif
                         </ul>
                     </nav>

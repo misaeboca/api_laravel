@@ -86,12 +86,12 @@ $ruta = $porciones[0];
                                        
                                         <li role="separator" class="divider"></li>
                                         <li><a href="javascript:void(0)" id="_btn_cerrar_session">
-                                             <form id="logout-form" action="url('/logout')" method="POST" style="display: none;">
+                                             <form id="logout-form" action="url('/login')" method="POST" style="display: none;">
                                                 {{ csrf_field() }}
                                             </form>
 
-                                            <a href="{{ route('logout') }}">
-                                                Cerrar Sesión</a>
+                                            <a href="{{ route('login') }}">
+                                                Iniciar Sesión</a>
                                             </li>
                                     </ul>
                                 </div>
@@ -111,25 +111,14 @@ $ruta = $porciones[0];
                         <ul id="sidebarnav">
                             @if( $ruta != 'changePassword' )
                             <li>
-                                <a class="has-arrow waves-effect waves-dark" href="{{url('/index_usuarios')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Inicio</span></a>
+                                <a class="has-arrow waves-effect waves-dark" href="{{url('portada')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Portada</span></a>
                             </li>
                             <li>
-                                <a class="has-arrow waves-effect waves-dark" href="{{url('/post')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Post</span></a>
+                                <a class="has-arrow waves-effect waves-dark" href="{{url('presentacion')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Presentación</span></a>
                             </li>
                             <li>
-                                <a class="has-arrow waves-effect waves-dark" href="{{url('busqueda')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Individual</span></a>
+                                <a class="has-arrow waves-effect waves-dark" href="{{url('categorias')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Categorias</span></a>
                             </li>
-                            <li>
-                                <a class="has-arrow waves-effect waves-dark" href="{{url('mostrar')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Todos</span></a>
-                            </li>
-                            <li>
-                                <a class="has-arrow waves-effect waves-dark" href="{{url('paginas')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Paginas</span></a>
-                            </li>
-                                @if( Auth::user()->tipo == 1)
-                                    <li>
-                                        <a class="has-arrow waves-effect waves-dark" href="{{url('usuarios')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Usuarios</span></a>
-                                    </li>
-                                 @endif
                             @endif
                         </ul>
                     </nav>
@@ -203,6 +192,7 @@ $ruta = $porciones[0];
 
     
     $(".fa-power-off").on("click", function(){
+        alert()
         $("#logout-form").submit();
     });
 
