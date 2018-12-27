@@ -111,6 +111,23 @@ class UserController extends Controller
             Session::flash('message-success', 'Tu password ha sido cambiado');
             return redirect()->route('login'); 
         }
+    }
+    public function usuarios(Request $request){
+        $users  = DB::table('users')->select('*')->orderBy('id', 'asc')->get();
+        return view('usuarios', ['datos' => $users]);
+    }
+
+    public function activar(Request $request){
+        DB::table('users')->where('id','=',$request->id)->update(array('status'=> 1));
+        
+        return json_encode(array('msj'=>'Registro Actulizado', 'res'=> 1));
         
     }
+    public function inactivar(Request $request){
+        DB::table('users')->where('id','=',$request->id)->update(array('status'=> 0));
+        
+        return json_encode(array('msj'=>'Registro Actulizado', 'res'=> 1));
+        
+    }
+    
 }

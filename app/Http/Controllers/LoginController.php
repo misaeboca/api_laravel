@@ -51,13 +51,25 @@ class LoginController extends Controller
     public function Login(Request $request){
         if ( Auth::attempt([ 'username' =>$request->email, 'password' =>$request->password, 'status'=>'1' ] , $request->has('remember')) )
         {
-            $post = Post::all();
-            return view('index', ['post' => $post]);
+            if(Auth::user()->tipo==1){
+                $datos = DB::table('post')->select('*')->get();
+                return view('index_usuarios', ['datos' => $datos]);
+            }else if(Auth::user()->tipo==2){
+                $post = Post::all();
+                return view('index_usuarios', ['datos' => $post]);
+            }
+          
         }
         elseif (Auth::attempt([ 'email' =>$request->email, 'password' => $request->password, 'status' => '1', ] , $request->has('remember') ) )
         {
-            $post = Post::all();
-            return view('index', ['post' => $post]);
+            if(Auth::user()->tipo==1){
+                $post = Post::all();
+                return view('index_usuarios', ['datos' => $post]);
+            }else if (Auth::user()->tipo==2){
+                $post = Post::all();
+                return view('index_usuarios', ['datos' => $post]);
+            }
+        
         }
         else{
             $rules = [ 'email' => 'required', 'password' => 'required', ];

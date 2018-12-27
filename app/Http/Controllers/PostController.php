@@ -101,4 +101,22 @@ class PostController extends Controller
         $cate  = DB::table('post_categoria')->where('id_posts','=', $request->id)->select('*')->orderBy('id_categoria', 'asc')->get();
         return view('view_post', ['datos' => $datos[0], 'cate' => $cate]);
     }
+    public function postList(Request $request)
+    {
+        $datos = DB::table('post')->select('*')->get();
+        return view('index', ['datos' => $datos]);
+    }
+
+    public function postMostrarList(Request $request)
+    {
+        $datos = DB::table('post')->select('*')->where('id','=', $request->id)->get();
+
+        $cate  = DB::table('post_categoria')->where('id_posts','=', $request->id)->select('*')->orderBy('id_categoria', 'asc')->get();
+        return view('view_post_list', ['datos' => $datos[0], 'cate' => $cate]);
+    }
+    public function categorias(Request $request)
+    {
+        $datos  = DB::table('categoria')->select('*')->orderBy('id', 'asc')->get();
+        return view('categorias', ['datos' => $datos]);
+    }
 }

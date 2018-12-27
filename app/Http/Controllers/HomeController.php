@@ -27,16 +27,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function portada()
+    {
+        $datos = DB::table('post')->select('*')->get();
+        return view('index', ['datos' => $datos]);
+    }
 
     public function index()
     {
         $post = Post::all();
-        return View('index', ['post' => $post]);
+        return View('index_usuarios', ['datos' => $post]);
     }
     public function post()
     {
         $post = Post::all();
-        return View('post', ['post' => $post]);
+        return View('post', ['datos' => $post]);
     }
     public function showChangePasswordForm(){
         return view('auth.passwords.cambiarclave');
