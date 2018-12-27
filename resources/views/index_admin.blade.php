@@ -1,4 +1,4 @@
-@extends('layouts/default_index')
+@extends('layouts/default_admin')
 {{-- Page title --}}
 @section('title')
    Plataforma
@@ -28,6 +28,7 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Titulo</th>
+                                            <th> Contenido </th>
                                             <th> Autor </th>
                                             <th width="20%"> Fecha Publicacion </th>
                                         </tr>
@@ -39,9 +40,10 @@
                                                     <input type="hidden" name="id" value="{{ $p->id }}">
                                                     <td >{{$p->id}}</td>
                                                     <td width="20%">{{$p->titulo}}</td>
+                                                    <td width="30%">{{$p->contenido}}</td>
                                                     <td>{{$p->autor}}</td>
                                                     <td width="20%">
-                                                        <form action="{{ url('post_mostrar_list') }}">
+                                                        <form action="{{ url('post_mostrar') }}">
                                                             <input type="hidden" name="id" value="{{$p->id}}">
                                                             {{$p->created_at}}
                                                             <button class="btn btn-primary"><i class="fa fa-edit" style="cursor:pointer"  idpost="{{$p->id}}"></i></button>
@@ -85,7 +87,7 @@
                     "loadingRecords": "Cargando...",
                     "processing":     "Procesando...",
                     "search":         "Buscar:",
-                    "searchPlaceholder": "Titulo /  Autor / Fecha ",
+                    "searchPlaceholder": "Equipo /  Tiempo Real / Diario / Aceptado /  Estatus",
                     "zeroRecords":    "No se encontraron registros coincidentes",
                     "paginate": {
                         "first":      "Primeo",

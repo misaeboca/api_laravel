@@ -5,11 +5,6 @@
    @parent
 @endsection
 @section('content')
-<script>
-    function modal_nuevo(){
-        $("#new").modal("show");
-    } 
-</script>
 <br><br>
 
      <div class="col-lg-12">
@@ -18,7 +13,7 @@
               <div class="col-12">
                   <div class="card">
                       <div class="card-body">
-                        <h4 class="card-title">Listados de los 10 primeros Post</h4>
+                        <h4 class="card-title">Listados de Categorias</h4>
                         <hr> 
                         <div class="row p-l-10 p-r-10 ">
                             <div class=" table-responsive m-t-20 col-12">
@@ -27,26 +22,16 @@
                                     <thead class="head-table-c text-white">
                                         <tr>
                                             <th>Id</th>
-                                            <th>Titulo</th>
-                                            <th> Autor </th>
-                                            <th width="20%"> Fecha Publicacion </th>
+                                            <th>Nombre</th>
                                         </tr>
                                     </thead>
                                    
                                     <tbody id="_post_cuerpo">
                                         @foreach($datos as $p)
                                             <tr>
-                                                    <input type="hidden" name="id" value="{{ $p->id }}">
-                                                    <td >{{$p->id}}</td>
-                                                    <td width="20%">{{$p->titulo}}</td>
-                                                    <td>{{$p->autor}}</td>
-                                                    <td width="20%">
-                                                        <form action="{{ url('post_mostrar_list') }}">
-                                                            <input type="hidden" name="id" value="{{$p->id}}">
-                                                            {{$p->created_at}}
-                                                            <button class="btn btn-primary"><i class="fa fa-edit" style="cursor:pointer"  idpost="{{$p->id}}"></i></button>
-                                                        </form>
-                                                    </td>
+                                                <input type="hidden" name="id" value="{{ $p->id }}">
+                                                <td >{{$p->id}}</td>
+                                                <td width="70%">{{$p->nombre}}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -85,7 +70,7 @@
                     "loadingRecords": "Cargando...",
                     "processing":     "Procesando...",
                     "search":         "Buscar:",
-                    "searchPlaceholder": "Titulo /  Autor / Fecha ",
+                    "searchPlaceholder": "Id /  Nombre",
                     "zeroRecords":    "No se encontraron registros coincidentes",
                     "paginate": {
                         "first":      "Primeo",
@@ -101,7 +86,6 @@
                 }
 
     });//fin datatable
-
 });
 </script>
 @endsection

@@ -54,8 +54,9 @@
                                     <thead class="head-table-c text-white">
                                         <tr>
                                             <th>Id</th>
-                                            <th class="text-right">Titulo</th>
-                                            <th class="text-right">Fecha de Publicación</th>
+                                            <th width="30%" class="text-left">Titulo</th>
+                                            <th width="30%" class="text-left">Autor</th>
+                                            <th class="text-left">Fecha de Publicación</th>
                                         </tr>
 
 
@@ -64,8 +65,9 @@
                                     <tbody id="cuerpo_tabla">
                                         <tr>
                                             <td>Id</td>
-                                            <td class="text-right">Titulo</td>
-                                            <td  class="text-right">Fecha de Publicación</td>
+                                            <td class="text-left">Titulo</td>
+                                            <td class="text-left">Titulo</td>
+                                            <td  class="text-left">Fecha de Publicación</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -121,6 +123,7 @@
                       "columns": [
                           { "data": "id" },
                           { "data": "titulo" },
+                          { "data": "autor" },
                           { "data": "created_at" }
                       ],
                         "language": {

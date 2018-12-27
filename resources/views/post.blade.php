@@ -38,7 +38,7 @@
                                     </thead>
                                    
                                     <tbody id="_post_cuerpo">
-                                        @foreach($post as $p)
+                                        @foreach($datos as $p)
                                             <tr>
                                                     <input type="hidden" name="id" value="{{ $p->id }}">
                                                     <td >{{$p->id}}</td>

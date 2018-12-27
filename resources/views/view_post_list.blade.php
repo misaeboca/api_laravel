@@ -1,4 +1,4 @@
-@extends('layouts/default')
+@extends('layouts/default_index')
 {{-- Page title --}}
 @section('title')
    Plataforma
@@ -27,6 +27,7 @@
                         <!-- Column -->
                         <div class="card">
                             <div class="card-body">
+                                 <p class="m-b-5 m-t-10">Titulo</p>
                                 <h2 class="card-title">{{ $datos->titulo}}</h2>
                             </div>
                             <!-- ============================================================== -->
@@ -34,15 +35,29 @@
                             <!-- ============================================================== -->
                             <div class="comment-widgets m-b-20">
                                 <!-- Comment Row -->
+                                 <div class="d-flex flex-row comment-row">
+                                    <div class="comment-text w-100">
+                                        <div class="comment-footer">
+       
+                                        </div>
+                                        <p class="m-b-5 m-t-10">Autor</p>
+                                        <p class="m-b-5 m-t-10">{{ $datos->autor}}.</p>
+                                    </div>
+                                </div>
+
                                 <div class="d-flex flex-row comment-row">
                                     <div class="comment-text w-100">
                                         <div class="comment-footer">
        
                                         </div>
+                                        <p class="m-b-5 m-t-10">Contenido</p>
                                         <p class="m-b-5 m-t-10">{{ $datos->contenido}}.</p>
                                     </div>
                                 </div>
+                                <p class="m-b-5 m-t-10" style="padding-left: 20px">Categoria</p>
                                 <div class="d-flex flex-row comment-row ">
+                                    
+                                    <br>
                                     @foreach($cate as $p)
                                         @if($p->id_categoria == 1)
                                             <span class="label label-info">Tecnologia</span> <span class="action-icons" style="padding-right: 10px;"></span>
@@ -82,7 +97,7 @@
     <div class="container text-center">
       <div class="row">
         <div class="col-sm-12 center">
-          <a href="{{ url('/index_usuarios') }}">volver</a>
+          <a href="{{ url('/portada') }}">volver</a>
         </div>
       </div>
     </div>
@@ -112,7 +127,7 @@
                     "loadingRecords": "Cargando...",
                     "processing":     "Procesando...",
                     "search":         "Buscar:",
-                    "searchPlaceholder": "Equipo /  Tiempo Real / Diario / Aceptado /  Estatus",
+                    "searchPlaceholder": "Titulo /  Autor / Fecha",
                     "zeroRecords":    "No se encontraron registros coincidentes",
                     "paginate": {
                         "first":      "Primeo",

@@ -35,6 +35,9 @@
                             <div class="comment-widgets m-b-20">
                                 <!-- Comment Row -->
                                 <div class="d-flex flex-row comment-row">
+                                <div>
+                                    <p class="m-b-5 m-t-10">{{ $datos->autor}}.</p>
+                                </div>
                                     <div class="comment-text w-100">
                                         <div class="comment-footer">
        
@@ -42,6 +45,10 @@
                                         <p class="m-b-5 m-t-10">{{ $datos->contenido}}.</p>
                                     </div>
                                 </div>
+                                <div>
+                                    <p class="m-b-5 m-t-10">{{ $datos->created_at}}.</p>
+                                </div>
+                               
                                 <div class="d-flex flex-row comment-row ">
                                     @foreach($cate as $p)
                                         @if($p->id_categoria == 1)
@@ -82,51 +89,10 @@
     <div class="container text-center">
       <div class="row">
         <div class="col-sm-12 center">
-          <a href="{{ url('/index_usuarios') }}">volver</a>
+          <a href="{{ url('/') }}">volver</a>
         </div>
       </div>
     </div>
 
 <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-@endsection
-@section('scripts')
-<script>
-    $(document).ready(function() {
-        var categorias = Array();
-          
-        $('.dataTables_filter input[type="search"]').css(
-           {'width':'400px', 'font-size':'14px'}
-        );
-
-
-        $('#_post').DataTable({
-                    "language": {
-                    "decimal":        "",
-                    "emptyTable":     "No hay datos disponibles en la tabla",
-                    "info":           "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                    "infoEmpty":      "Mostrando 0 a 0 de 0 registros",
-                    "infoFiltered":   "(filtrado de _MAX_ total registros)",
-                    "infoPostFix":    "",
-                    "thousands":      ",",
-                    "lengthMenu":     "Mostrar _MENU_ registros",
-                    "loadingRecords": "Cargando...",
-                    "processing":     "Procesando...",
-                    "search":         "Buscar:",
-                    "searchPlaceholder": "Equipo /  Tiempo Real / Diario / Aceptado /  Estatus",
-                    "zeroRecords":    "No se encontraron registros coincidentes",
-                    "paginate": {
-                        "first":      "Primeo",
-                        "last":       "Ultimo",
-                        "next":       "Proximo",
-                        "previous":   "Anterior"
-
-                    },
-                    "aria": {
-                        "sortAscending":  ": activar para ordenar la columna ascendente",
-                        "sortDescending": ": activar para ordenar la columna descendente"
-                    }
-                }
-
-    });//fin datatable
-</script>
 @endsection

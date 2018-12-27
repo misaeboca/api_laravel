@@ -31,7 +31,6 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Titulo</th>
-                                            <th> Contenido </th>
                                             <th> Autor </th>
                                             <th> Fecha Publicacion </th>
                                             <th width="30%"s> Operación</th>
@@ -44,7 +43,6 @@
                                                     <input type="hidden" name="id" value="{{ $p->id }}">
                                                     <td >{{$p->id}}</td>
                                                     <td width="20%">{{$p->titulo}}</td>
-                                                    <td width="30%">{{$p->contenido}}</td>
                                                     <td>{{$p->autor}}</td>
                                                     <td>{{$p->created_at}}</td>
 
@@ -157,7 +155,7 @@
             $('#_pagina').dataTable().fnDestroy();
 
         $('.dataTables_filter input[type="search"]').css(
-           {'width':'400px', 'font-size':'14px'}
+           {'width':'500px', 'font-size':'12px'}
         );
 
         $('#_pagina').DataTable({
@@ -173,7 +171,7 @@
                     "loadingRecords": "Cargando...",
                     "processing":     "Procesando...",
                     "search":         "Buscar:",
-                    "searchPlaceholder": "Equipo /  Tiempo Real / Diario / Aceptado /  Estatus",
+                    "searchPlaceholder": "Titulo / Autor / Fecha de Publicación",
                     "zeroRecords":    "No se encontraron registros coincidentes",
                     "paginate": {
                         "first":      "Primeo",
