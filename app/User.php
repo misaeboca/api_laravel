@@ -14,7 +14,7 @@ class User extends Authenticatable
     protected $hidden = [ 'password', 'remember_token' ];    
     protected $table="users";
     protected $primaryKey = 'id';
-    protected $fillable = [ 'username', 'email','password', 'remember_token', 'roles_id', 'group_id', 'status', 'puid', 'first_login', ];
+    protected $fillable = [ 'username', 'email','password', 'remember_token', 'roles_id', 'group_id', 'status', 'puid', 'first_login', 'tipo'];
     
 
     public function useroles()
